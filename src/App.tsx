@@ -2,6 +2,7 @@ import { Container, Link, Separator } from "./components";
 import moment from "moment";
 import * as Bs from "react-icons/bs";
 import * as Ai from "react-icons/ai";
+import Logo from '../src/assets/Logo.png'
 
 function App() {
   moment.locale("pt-br");
@@ -11,11 +12,12 @@ function App() {
   return (
     <>
       <Container className="container box-border h-auto flex justify-between pb-20 my-9  rounded-2xl flex-col w-11/12 bg-zinc-800 bg-opacity-80  ">
-        <header
-          id="home"
-          className="w-full h-72 flex justify-center flex-col items-center  "
-        >
-          <div className="bg-[url('../src/assets/Logo.png')] bg-center bg-contain bg-no-repeat w-1/5 mb-5 h-24 " />
+        <header id="home" className="w-full h-72 flex justify-center flex-col items-center  ">
+          <img
+            src={Logo}
+            alt=""
+            className="w-1/5 mb-5 h-5/5 "
+          />
           <nav className="flex items-center gap-4 ">
             <Link href="#home">Home</Link>
 
@@ -98,16 +100,16 @@ function App() {
           </div>
         </section>
 
-        <section
-          id="projects"
-          className="h-auto flex gap-6 mt-40 flex-col justify-center  items-center "
-        >
+        <section id="projects" className="h-auto flex gap-6 mt-40 flex-col justify-center  items-center ">
           <h1 className="text-orange-600 text-xl"> Portifolio </h1>
 
           <div className=" flex flex-wrap gap-7 h-full w-5/6 items-center justify-center">
             <div className="card w-96 h-64 rounded-2xl flex items-center justify-center  ">
-            <div className="projects w-full h-full rounded-2xl bg-[url('./src/assets/devFinances.png')] bg-cover bg-center bg-no-repeat" />
-          
+              <img
+                className="projects w-full h-full rounded-2xl"
+                src="./src/assets/devFinances.png"
+                alt=""
+              />
               <h2 className="text-orange-600 font-semibold"> Dev Finances </h2>
               <p className="text-zinc-500 font-normal text-sm">
                 finance management website
@@ -137,7 +139,11 @@ function App() {
             </div>
 
             <div className="card w-96 h-64 rounded-2xl ">
-              <div className="projects w-full h-full rounded-2xl bg-[url('./src/assets/Cards.png')] bg-cover bg-center bg-no-repeat" />
+              <img
+                className="projects w-full h-full rounded-2xl"
+                src="./src/assets/Cards.png"
+                alt=""
+              />
 
               <h2 className="text-orange-600 font-semibold"> Cards </h2>
               <p className="text-zinc-500 font-normal text-sm">
@@ -168,7 +174,11 @@ function App() {
             </div>
 
             <div className="card w-96 h-64 rounded-2xl ">
-              <div className="projects w-full h-full rounded-2xl bg-[url('./src/assets/littleDev.png')] bg-cover bg-center bg-no-repeat" />
+              <img
+                className="projects w-full h-full rounded-2xl"
+                src="./src/assets/littleDev.png"
+                alt=""
+              />
 
               <h2 className="text-orange-600 font-semibold"> LittleDev </h2>
               <p className="text-zinc-500 font-normal text-sm">
@@ -200,11 +210,12 @@ function App() {
           </div>
         </section>
 
-        <footer
-          id="contacts"
-          className="mt-48 flex items-center justify-center flex-col"
-        >
-          <div className="bg-[url('../src/assets/Logo.png')] bg-center bg-contain bg-no-repeat w-1/5 mb-5 h-24 " />
+        <footer id="contacts" className="mt-48 flex items-center justify-center flex-col">
+          <img
+            src="../src/assets/Logo.png"
+            alt=""
+            className="w-1/5 mb-5 h-5/5 "
+          />
           <div className="flex gap-4 justify-center items-center">
             <div>
               <a
