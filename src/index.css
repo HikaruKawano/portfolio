@@ -1,9 +1,84 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
-body{
+
+body {
     background-image: url(../src/assets/background.jpg);
     background-size: cover;
     background-attachment: fixed;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+    background-color: gray;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+    background: orangered;
+    border-radius: 10px;
+}
+
+
+
+.card {
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+}
+
+img.projects {
+    position: absolute;
+    transition: opacity .2s ease-out;
+}
+
+
+
+.card p,
+.button {
+    position: absolute;
+    opacity: 0;
+    max-width: 80%;
+    transition: opacity .3s ease-out;
+}
+
+.card h2 {
+    position: absolute;
+    inset: auto auto 30px 30px;
+    margin: 0;
+    transition: inset 0.3s 0.3s ease-out;
+}
+
+.card p {
+    inset: auto auto 50px 30px;
+}
+
+.card .button {
+    inset: auto auto -10px 30px;
+}
+
+
+.card:hover h2 {
+    inset: auto auto 70px 30px;
+    transition: inset 0.3s ease-out;
+}
+
+.card:hover p,
+.card:hover .button {
+    opacity: 1;
+    transition: opacity 0.5s 0.1s ease-in;
+}
+
+.card:hover img {
+    transition: opacity 0.3s ease-in;
+    opacity: 1;
 }
