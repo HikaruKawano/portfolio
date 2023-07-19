@@ -33,11 +33,10 @@ function App() {
 
         <section className="h-80 flex justify-center w-full">
           <div className=" gap-6 mt-6 flex justify-center w-2/3">
-            <img
-              src="../src/assets/cartun.jpeg"
+            <div
               id="img"
-              className="-700 w-36 h-36 rounded-full "
-            ></img>
+              className="bg-[url('../src/assets/cartun.jpeg')] bg-cover w-36 h-36 rounded-full "
+            ></div>
             <div className=" flex-col w-2/6">
               <h1 className="text-orange-600 text-2xl">Hello Word</h1>
               <p className=" text-zinc-400 text-xl  ">
