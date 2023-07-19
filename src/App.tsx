@@ -2,8 +2,12 @@ import { Container, Link, Separator } from "./components";
 import moment from "moment";
 import * as Bs from "react-icons/bs";
 import * as Ai from "react-icons/ai";
-import Logo from '../src/assets/Logo.png'
-import  devFinances from "../src/assets/devFinances.png"
+import Logo from "../src/assets/Logo.png";
+import devFinances from "../src/assets/devFinances.png";
+import card from "../src/assets/Cards.png";
+import LittleDev from "../src/assets/littleDev.png";
+import cartun from "../src/assets/cartun.jpeg";
+import foto from "../src/assets/foto.jpeg";
 
 function App() {
   moment.locale("pt-br");
@@ -13,12 +17,11 @@ function App() {
   return (
     <>
       <Container className="container box-border h-auto flex justify-between pb-20 my-9  rounded-2xl flex-col w-11/12 bg-zinc-800 bg-opacity-80  ">
-        <header id="home" className="w-full h-72 flex justify-center flex-col items-center  ">
-          <img
-            src={Logo}
-            alt=""
-            className="w-1/5 mb-5 h-5/5 "
-          />
+        <header
+          id="home"
+          className="w-full h-72 flex justify-center flex-col items-center  "
+        >
+          <img src={Logo} alt="" className="w-1/5 mb-5 h-5/5 " />
           <nav className="flex items-center gap-4 ">
             <Link href="#home">Home</Link>
 
@@ -35,10 +38,11 @@ function App() {
 
         <section className="h-80 flex justify-center w-full">
           <div className=" gap-6 mt-6 flex justify-center w-2/3">
-            <div
+            <img
+              src={cartun}
               id="img"
-              className="bg-[url('../src/assets/cartun.jpeg')] bg-cover w-36 h-36 rounded-full "
-            ></div>
+              className="w-36 h-36 rounded-full "
+            ></img>
             <div className=" flex-col w-2/6">
               <h1 className="text-orange-600 text-2xl">Hello Word</h1>
               <p className=" text-zinc-400 text-xl  ">
@@ -54,10 +58,7 @@ function App() {
         </section>
 
         <section id="my-info" className=" h-96 flex gap-6 justify-center ">
-          <div
-            id="img"
-            className="bg-[url('../src/assets/foto.jpeg')] bg-cover  w-64 h-96 rounded-2xl "
-          ></div>
+          <img src={foto} id="img" className=" w-64 h-96 rounded-2xl "></img>
           <div className=" flex-col w-2/6">
             <h1 className="text-orange-600">about me</h1>
             <p className=" text-zinc-400 text-xl  ">
@@ -101,7 +102,10 @@ function App() {
           </div>
         </section>
 
-        <section id="projects" className="h-auto flex gap-6 mt-40 flex-col justify-center  items-center ">
+        <section
+          id="projects"
+          className="h-auto flex gap-6 mt-40 flex-col justify-center  items-center "
+        >
           <h1 className="text-orange-600 text-xl"> Portifolio </h1>
 
           <div className=" flex flex-wrap gap-7 h-full w-5/6 items-center justify-center">
@@ -142,7 +146,7 @@ function App() {
             <div className="card w-96 h-64 rounded-2xl ">
               <img
                 className="projects w-full h-full rounded-2xl"
-                src="./src/assets/Cards.png"
+                src={card}
                 alt=""
               />
 
@@ -177,7 +181,7 @@ function App() {
             <div className="card w-96 h-64 rounded-2xl ">
               <img
                 className="projects w-full h-full rounded-2xl"
-                src="./src/assets/littleDev.png"
+                src={LittleDev}
                 alt=""
               />
 
@@ -211,7 +215,10 @@ function App() {
           </div>
         </section>
 
-        <footer id="contacts" className="mt-48 flex items-center justify-center flex-col">
+        <footer
+          id="contacts"
+          className="mt-48 flex items-center justify-center flex-col"
+        >
           <img
             src="../src/assets/Logo.png"
             alt=""
