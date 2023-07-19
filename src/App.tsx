@@ -3,6 +3,7 @@ import moment from "moment";
 import * as Bs from "react-icons/bs";
 import * as Ai from "react-icons/ai";
 import Logo from '../src/assets/Logo.png'
+import  devFinances from "../src/assets/devFinances.png"
 
 function App() {
   moment.locale("pt-br");
@@ -107,7 +108,7 @@ function App() {
             <div className="card w-96 h-64 rounded-2xl flex items-center justify-center  ">
               <img
                 className="projects w-full h-full rounded-2xl"
-                src="./src/assets/devFinances.png"
+                src={devFinances}
                 alt=""
               />
               <h2 className="text-orange-600 font-semibold"> Dev Finances </h2>
