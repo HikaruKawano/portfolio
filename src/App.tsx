@@ -8,7 +8,7 @@ import card from "../src/assets/Cards.png";
 import LittleDev from "../src/assets/littleDev.png";
 import cartun from "../src/assets/cartun.jpeg";
 import foto from "../src/assets/foto.jpeg";
-import { useEffect, useRef } from "react";
+
 
 
 function App() {
