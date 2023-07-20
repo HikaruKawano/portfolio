@@ -221,7 +221,7 @@ function App() {
 
         <footer
           id="contacts"
-          className="flex items-center justify-center flex-col"
+          className="flex items-center justify-center mt-48 flex-col"
         >
           <img
             src={Logo}
