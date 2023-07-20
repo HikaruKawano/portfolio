@@ -224,7 +224,7 @@ function App() {
           className="flex items-center justify-center flex-col"
         >
           <img
-            src="../src/assets/Logo.png"
+            src={Logo}
             alt=""
             className="w-1/5 mb-5 h-5/5 "
           />
