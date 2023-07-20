@@ -68,8 +68,13 @@ img.projects {
 
 
 .card:hover h2 {
-    inset: auto auto 70px 30px;
+    inset: auto auto 75px 30px;
     transition: inset 0.3s ease-out;
+}
+
+.card:hover .TextGrande {
+    inset: auto auto 95px 30px;
+    transition: inset 0.3s ease-out; 
 }
 
 .card:hover p,
@@ -81,4 +86,33 @@ img.projects {
 .card:hover img {
     transition: opacity 0.3s ease-in;
     opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    section{
+        margin-bottom: 70px;
+        padding: 20px;
+    }
+    .avatarDiv{
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .avatarText{
+        width: 100%;
+    }
+
+
+    #my-info{
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+    }
+
+    #infoText{
+        width: 100%;
+    }
+
+
+   
 }

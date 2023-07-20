@@ -8,11 +8,15 @@ import card from "../src/assets/Cards.png";
 import LittleDev from "../src/assets/littleDev.png";
 import cartun from "../src/assets/cartun.jpeg";
 import foto from "../src/assets/foto.jpeg";
+import { useEffect, useRef } from "react";
+
 
 function App() {
   moment.locale("pt-br");
   const date = moment({ year: 2004, month: 10, day: 9 });
   const dateNow = moment();
+  
+  
 
   return (
     <>
@@ -37,13 +41,13 @@ function App() {
         </header>
 
         <section className="h-80 flex justify-center w-full">
-          <div className=" gap-6 mt-6 flex justify-center w-2/3">
+          <div className="avatarDiv gap-6 mt-6 flex justify-center w-2/3">
             <img
               src={cartun}
               id="img"
               className="w-36 h-36 rounded-full "
             ></img>
-            <div className=" flex-col w-2/6">
+            <div className="avatarText flex-col w-2/6">
               <h1 className="text-orange-600 text-2xl">Hello Word</h1>
               <p className=" text-zinc-400 text-xl  ">
                 I am a Fontend and backend developer Freelancer.
@@ -59,7 +63,7 @@ function App() {
 
         <section id="my-info" className=" h-96 flex gap-6 justify-center ">
           <img src={foto} id="img" className=" w-64 h-96 rounded-2xl "></img>
-          <div className=" flex-col w-2/6">
+          <div id="infoText" className=" flex-col w-2/6">
             <h1 className="text-orange-600">about me</h1>
             <p className=" text-zinc-400 text-xl  ">
               My name is Anderson Kawano. I am a Frontend and Backend developer,
@@ -104,7 +108,7 @@ function App() {
 
         <section
           id="projects"
-          className="h-auto flex gap-6 mt-40 flex-col justify-center  items-center "
+          className="h-auto flex gap-6 flex-col justify-center  items-center "
         >
           <h1 className="text-orange-600 text-xl"> Portifolio </h1>
 
@@ -185,11 +189,11 @@ function App() {
                 alt=""
               />
 
-              <h2 className="text-orange-600 font-semibold"> LittleDev </h2>
-              <p className="text-zinc-500 font-normal text-sm">
+              <h2  className="TextGrande text-orange-600 font-semibold "> LittleDev </h2>
+              <p   className="text-zinc-500 font-normal text-sm">
                 website of a fictitious company created for studies
               </p>
-              <div className="button flex gap-3">
+              <div  className="button flex gap-3">
                 <a
                   href="https://github.com/HikaruKawano/LittleDev"
                   target="_blank"
@@ -217,7 +221,7 @@ function App() {
 
         <footer
           id="contacts"
-          className="mt-48 flex items-center justify-center flex-col"
+          className="flex items-center justify-center flex-col"
         >
           <img
             src="../src/assets/Logo.png"
