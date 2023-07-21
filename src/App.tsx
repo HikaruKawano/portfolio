@@ -108,7 +108,7 @@ function App() {
 
         <section
           id="projects"
-          className="h-auto flex gap-6 flex-col justify-center  items-center "
+          className="h-auto flex gap-6 flex-col mt-40 justify-center  items-center "
         >
           <h1 className="text-orange-600 text-xl"> Portifolio </h1>
 
