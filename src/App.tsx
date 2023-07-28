@@ -8,15 +8,28 @@ import card from "../src/assets/Cards.png";
 import LittleDev from "../src/assets/littleDev.png";
 import cartun from "../src/assets/cartun.jpeg";
 import foto from "../src/assets/foto.jpeg";
-
-
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import React from "react";
+import { CustomTabPanel } from "./components/tab";
 
 function App() {
   moment.locale("pt-br");
   const date = moment({ year: 2004, month: 10, day: 9 });
   const dateNow = moment();
-  
-  
+
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    setValue(newValue);
+  };
+
+  function a11yProps(index: number) {
+    return {
+      id: `simple-tab-${index}`,
+      "aria-controls": `simple-tabpanel-${index}`,
+    };
+  }
 
   return (
     <>
@@ -112,6 +125,24 @@ function App() {
         >
           <h1 className="text-orange-600 text-xl"> Portifolio </h1>
 
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            aria-label="basic tabs example"
+          >
+            <Tab label="Item One" {...a11yProps(0)} />
+            <Tab label="Item Two" {...a11yProps(1)} />
+            
+          </Tabs>
+
+          <CustomTabPanel value={value} index={0}>
+            Item One
+          </CustomTabPanel>
+          <CustomTabPanel value={value} index={1}>
+            Item Two
+          </CustomTabPanel>
+          
+
           <div className=" flex flex-wrap gap-7 h-full w-5/6 items-center justify-center">
             <div className="card w-96 h-64 rounded-2xl flex items-center justify-center  ">
               <img
@@ -189,11 +220,14 @@ function App() {
                 alt=""
               />
 
-              <h2  className="TextGrande text-orange-600 font-semibold "> LittleDev </h2>
-              <p   className="text-zinc-500 font-normal text-sm">
+              <h2 className="TextGrande text-orange-600 font-semibold ">
+                {" "}
+                LittleDev{" "}
+              </h2>
+              <p className="text-zinc-500 font-normal text-sm">
                 website of a fictitious company created for studies
               </p>
-              <div  className="button flex gap-3">
+              <div className="button flex gap-3">
                 <a
                   href="https://github.com/HikaruKawano/LittleDev"
                   target="_blank"
@@ -223,11 +257,7 @@ function App() {
           id="contacts"
           className="flex items-center justify-center mt-48 flex-col"
         >
-          <img
-            src={Logo}
-            alt=""
-            className="w-1/5 mb-5 h-5/5 "
-          />
+          <img src={Logo} alt="" className="w-1/5 mb-5 h-5/5 " />
           <div className="flex gap-4 justify-center items-center">
             <div>
               <a
