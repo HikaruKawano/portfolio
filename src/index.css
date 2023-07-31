@@ -30,8 +30,8 @@ body::-webkit-scrollbar-thumb {
 
 
 .card {
+    align-items: center;
     overflow: hidden;
-    cursor: pointer;
     position: relative;
     box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
 }
@@ -44,19 +44,13 @@ img.projects {
 
 
 .card p,
-.button {
+.button, h2 {
     position: absolute;
     opacity: 0;
     max-width: 80%;
     transition: opacity .3s ease-out;
 }
 
-.card h2 {
-    position: absolute;
-    inset: auto auto 30px 30px;
-    margin: 0;
-    transition: inset 0.3s 0.3s ease-out;
-}
 
 .card p {
     inset: auto auto 50px 30px;
@@ -66,17 +60,11 @@ img.projects {
     inset: auto auto -10px 30px;
 }
 
-
-.card:hover h2 {
-    inset: auto auto 75px 30px;
-    transition: inset 0.3s ease-out;
+.card h2 {
+    inset: auto auto 60px 30px;
 }
 
-.card:hover .TextGrande {
-    inset: auto auto 95px 30px;
-    transition: inset 0.3s ease-out; 
-}
-
+.card:hover h2,
 .card:hover p,
 .card:hover .button {
     opacity: 1;

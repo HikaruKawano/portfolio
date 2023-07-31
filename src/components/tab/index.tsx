@@ -9,6 +9,7 @@ export function CustomTabPanel(props: TabPanelProps) {
 
   return (
     <div
+      className="h-full w-full flex flex-row flex-wrap"
       role="tabpanel"
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
@@ -16,7 +17,7 @@ export function CustomTabPanel(props: TabPanelProps) {
       {...other}
     >
       {value === index && (
-        <p>{children}</p>
+        <div className="flex justify-center items-center w-full h-full gap-6 flex-wrap">{children}</div>
       )}
     </div>
   );
