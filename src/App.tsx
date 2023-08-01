@@ -2,21 +2,35 @@ import { Container, Link, Separator } from "./components";
 import moment from "moment";
 import * as Bs from "react-icons/bs";
 import * as Ai from "react-icons/ai";
-import Logo from "../src/assets/Logo.png";
-import devFinances from "../src/assets/devFinances.png";
-import card from "../src/assets/Cards.png";
-import LittleDev from "../src/assets/littleDev.png";
+import Logo from "../src/assets/logo.png";
 import cartun from "../src/assets/cartun.jpeg";
 import foto from "../src/assets/foto.jpeg";
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import React from "react";
+import { CustomTabPanel } from "./components/tab";
+import Card from "./components/Cards";
 
+import { ProgramerProjects, DesignerProjects } from "./api/db";
 
 
 function App() {
   moment.locale("pt-br");
   const date = moment({ year: 2004, month: 10, day: 9 });
   const dateNow = moment();
-  
-  
+
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
+    setValue(newValue);
+  };
+
+  function a11yProps(index: number) {
+    return {
+      id: `simple-tab-${index}`,
+      "aria-controls": `simple-tabpanel-${index}`,
+    };
+  }
 
   return (
     <>
@@ -112,122 +126,59 @@ function App() {
         >
           <h1 className="text-orange-600 text-xl"> Portifolio </h1>
 
-          <div className=" flex flex-wrap gap-7 h-full w-5/6 items-center justify-center">
-            <div className="card w-96 h-64 rounded-2xl flex items-center justify-center  ">
-              <img
-                className="projects w-full h-full rounded-2xl"
-                src={devFinances}
-                alt=""
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            TabIndicatorProps={{
+              style: {
+                backgroundColor: '#EA580C'
+              }
+            }}
+            sx={{
+              ".Mui-selected": {
+              color: `#EA580C`,
+              },
+              }}
+            
+            
+          >
+            <Tab
+              
+              label="Projects"
+              {...a11yProps(0)}
+            />
+            <Tab label="Designers" {...a11yProps(1)} />
+          </Tabs>
+
+          <CustomTabPanel value={value} index={0}>
+            {ProgramerProjects.map((project) => (
+              <Card
+                image={project.Image}
+                description={project.Descripton}
+                name={project.Name}
+                linkCode={project.LinkCode}
+                linkPreview={project.LinkPreview}
+                key={project.id}
               />
-              <h2 className="text-orange-600 font-semibold"> Dev Finances </h2>
-              <p className="text-zinc-500 font-normal text-sm">
-                finance management website
-              </p>
-              <div className="button flex gap-3">
-                <a
-                  href="https://github.com/HikaruKawano/DevFinances-react"
-                  target="_blank"
-                  className="w-auto h-10"
-                >
-                  <button className="bg-orange-600 w-auto px-7 rounded-xl pb-5 pt-1 font-semibold text-zinc-300 mt-3">
-                    view code
-                  </button>
-                </a>
-
-                <a
-                  href="https://dev-finances-react.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className=""
-                >
-                  <button className="bg-orange-600 w-auto px-7 rounded-xl pb-5 pt-1 font-semibold text-zinc-300 mt-3">
-                    view site
-                  </button>
-                </a>
-              </div>
-            </div>
-
-            <div className="card w-96 h-64 rounded-2xl ">
-              <img
-                className="projects w-full h-full rounded-2xl"
-                src={card}
-                alt=""
+            ))}
+          </CustomTabPanel>
+          <CustomTabPanel value={value} index={1}>
+            {DesignerProjects.map((project) => (
+              <Card
+                image={project.Image}
+                name={project.Name}
+                linkPreview={project.LinkPreview}
+                key={project.id}
               />
-
-              <h2 className="text-orange-600 font-semibold"> Cards </h2>
-              <p className="text-zinc-500 font-normal text-sm">
-                cards created for science fair
-              </p>
-              <div className="button flex gap-3">
-                <a
-                  href="https://github.com/HikaruKawano/Card"
-                  target="_blank"
-                  className="w-auto h-10"
-                >
-                  <button className="bg-orange-600 w-auto px-7 rounded-xl pb-5 pt-1 font-semibold text-zinc-300 mt-3">
-                    view code
-                  </button>
-                </a>
-
-                <a
-                  href="https://card-ochre.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className=""
-                >
-                  <button className="bg-orange-600 w-auto px-7 rounded-xl pb-5 pt-1 font-semibold text-zinc-300 mt-3">
-                    view site
-                  </button>
-                </a>
-              </div>
-            </div>
-
-            <div className="card w-96 h-64 rounded-2xl ">
-              <img
-                className="projects w-full h-full rounded-2xl"
-                src={LittleDev}
-                alt=""
-              />
-
-              <h2  className="TextGrande text-orange-600 font-semibold "> LittleDev </h2>
-              <p   className="text-zinc-500 font-normal text-sm">
-                website of a fictitious company created for studies
-              </p>
-              <div  className="button flex gap-3">
-                <a
-                  href="https://github.com/HikaruKawano/LittleDev"
-                  target="_blank"
-                  className="w-auto h-10"
-                >
-                  <button className="bg-orange-600 w-auto px-7 rounded-xl pb-5 pt-1 font-semibold text-zinc-300 mt-3">
-                    view code
-                  </button>
-                </a>
-
-                <a
-                  href="https://little-dev.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className=""
-                >
-                  <button className="bg-orange-600 w-auto px-7 rounded-xl pb-5 pt-1 font-semibold text-zinc-300 mt-3">
-                    view site
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
+            ))}
+          </CustomTabPanel>
         </section>
 
         <footer
           id="contacts"
           className="flex items-center justify-center mt-48 flex-col"
         >
-          <img
-            src={Logo}
-            alt=""
-            className="w-1/5 mb-5 h-5/5 "
-          />
+          <img src={Logo} alt="" className="w-1/5 mb-5 h-5/5 " />
           <div className="flex gap-4 justify-center items-center">
             <div>
               <a
