@@ -11,6 +11,7 @@ import React from "react";
 import { CustomTabPanel } from "./components/tab";
 import Card from "./components/Cards";
 
+
 import { ProgramerProjects, DesignerProjects } from "./api/db";
 
 
@@ -31,6 +32,8 @@ function App() {
       "aria-controls": `simple-tabpanel-${index}`,
     };
   }
+
+
 
   return (
     <>
@@ -131,12 +134,12 @@ function App() {
             onChange={handleChange}
             TabIndicatorProps={{
               style: {
-                backgroundColor: '#EA580C'
+                backgroundColor: 'orange',
               }
             }}
             sx={{
               ".Mui-selected": {
-              color: `#EA580C`,
+              color: `orange`,
               },
               }}
             
