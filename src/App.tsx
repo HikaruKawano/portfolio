@@ -2,15 +2,17 @@ import { Container, Link, Separator } from "./components";
 import moment from "moment";
 import * as Bs from "react-icons/bs";
 import * as Ai from "react-icons/ai";
-import Logo from '../src/assets/logo.png';
+import Logo from "../src/assets/logo.png";
 import cartun from "../src/assets/cartun.jpeg";
 import foto from "../src/assets/foto.jpeg";
-import { Tabs, Tab } from "@mui/material";
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
 import React from "react";
 import { CustomTabPanel } from "./components/tab";
 import Card from "./components/Cards";
 
-import { ProgramerProjects , DesignerProjects } from "./api/db";
+import { ProgramerProjects, DesignerProjects } from "./api/db";
+
 
 function App() {
   moment.locale("pt-br");
@@ -127,10 +129,24 @@ function App() {
           <Tabs
             value={value}
             onChange={handleChange}
-            aria-label="basic tabs example"
-            className="text-zinc-600"
+            TabIndicatorProps={{
+              style: {
+                backgroundColor: '#EA580C'
+              }
+            }}
+            sx={{
+              ".Mui-selected": {
+              color: `#EA580C`,
+              },
+              }}
+            
+            
           >
-            <Tab label="Projects" {...a11yProps(0)} />
+            <Tab
+              
+              label="Projects"
+              {...a11yProps(0)}
+            />
             <Tab label="Designers" {...a11yProps(1)} />
           </Tabs>
 
@@ -149,11 +165,11 @@ function App() {
           <CustomTabPanel value={value} index={1}>
             {DesignerProjects.map((project) => (
               <Card
-              image={project.Image}
-              name={project.Name}
-              linkPreview={project.LinkPreview}
-              key={project.id}
-            />
+                image={project.Image}
+                name={project.Name}
+                linkPreview={project.LinkPreview}
+                key={project.id}
+              />
             ))}
           </CustomTabPanel>
         </section>
