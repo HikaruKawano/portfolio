@@ -1,4 +1,3 @@
-import React from "react";
 import { useEffect, useRef } from "react";
 
 interface props {
@@ -21,7 +20,7 @@ const Card = (props: props) => {
     if (elementText && elementButton) {
       const heightTxt: number = elementText.clientHeight;
       const heightBtn: number = elementButton.clientHeight;
-      console.log(heightTxt, heightBtn);
+      
 
       elementTitleRef.current?.style.setProperty('inset', `auto auto ${heightTxt + heightBtn + 10}px 30px`);
     }
