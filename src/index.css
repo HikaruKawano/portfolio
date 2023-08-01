@@ -41,10 +41,18 @@ img.projects {
     transition: opacity .2s ease-out;
 }
 
+.Mui-selected {
+    color: #EA580C !important;
+    
+}
+.MuiTabs-indicator {
+    background-color: #EA580C !important;
+}
 
 
 .card p,
-.button, h2 {
+.button,
+h2 {
     position: absolute;
     opacity: 0;
     max-width: 80%;
@@ -77,30 +85,32 @@ img.projects {
 }
 
 @media screen and (max-width: 768px) {
-    section{
+    section {
         margin-bottom: 70px;
         padding: 20px;
     }
-    .avatarDiv{
+
+    .avatarDiv {
         flex-direction: column;
         align-items: center;
-        
+
     }
-    .avatarText{
+
+    .avatarText {
         width: 100%;
     }
 
 
-    #my-info{
+    #my-info {
         flex-direction: column;
         height: auto;
         align-items: center;
     }
 
-    #infoText{
+    #infoText {
         width: 100%;
     }
 
 
-   
+
 }

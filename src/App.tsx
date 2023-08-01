@@ -5,15 +5,13 @@ import * as Ai from "react-icons/ai";
 import Logo from "./assets/Logo.png";
 import cartun from "./assets/cartun.jpeg";
 import foto from "./assets/foto.jpeg";
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
 import React from "react";
 import { CustomTabPanel } from "./components/tab";
 import Card from "./components/Cards";
 
-
 import { ProgramerProjects, DesignerProjects } from "./api/db";
-
 
 function App() {
   moment.locale("pt-br");
@@ -32,8 +30,6 @@ function App() {
       "aria-controls": `simple-tabpanel-${index}`,
     };
   }
-
-
 
   return (
     <>
@@ -129,27 +125,8 @@ function App() {
         >
           <h1 className="text-orange-600 text-xl"> Portifolio </h1>
 
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            TabIndicatorProps={{
-              style: {
-                backgroundColor: 'orange',
-              }
-            }}
-            sx={{
-              ".Mui-selected": {
-              color: `orange`,
-              },
-              }}
-            
-            
-          >
-            <Tab
-              
-              label="Projects"
-              {...a11yProps(0)}
-            />
+          <Tabs value={value} onChange={handleChange}>
+            <Tab label="Projects" {...a11yProps(0)} />
             <Tab label="Designers" {...a11yProps(1)} />
           </Tabs>
 
